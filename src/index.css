@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* Gaya dasar global untuk kompatibilitas browser */
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Sembunyikan ikon mata bawaan Microsoft Edge agar tidak ganda */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+/* Kelas utilitas tombol utama hijau */
+.btn-primary {
+  background-color: #4C7C54;
+  color: white;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.btn-primary:hover {
+  background-color: #3d6543;
+}
+.btn-primary:active {
+  transform: scale(0.99);
+}
+
+/* Kelas utilitas tombol sekunder abu-abu */
+.btn-secondary {
+  background-color: #e5e7eb;
+  color: #1f2937;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  background-color: #d1d5db;
+}
+
+/* Kelas utilitas kartu efek bayangan kuning */
+.card-3d-yellow {
+  background-color: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 6px 6px 0px #F2CC8F;
+}

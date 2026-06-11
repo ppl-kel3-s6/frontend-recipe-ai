@@ -23,10 +23,9 @@ function Sidebar({ halaman, setHalaman, asalHalaman }) {
           {/* Menu Dashboard */}
           <button
             onClick={() => setHalaman('dashboard-home')}
-            className={`flex items-center gap-3 w-full py-2.5 px-3 rounded-xl transition-all cursor-pointer text-left text-[15px] ${
-              halaman === 'dashboard-home' || (halaman === 'detail-resep' && asalHalaman === 'dashboard-home')
+            className={`flex items-center gap-3 w-full py-2.5 px-3 rounded-xl transition-all cursor-pointer text-left text-[15px] ${halaman === 'dashboard-home' || (halaman === 'detail-resep' && asalHalaman === 'dashboard-home')
                 ? 'bg-[#F2CC8F] text-neutral-950 font-bold shadow-sm'
-                : 'text-gray-400 hover:text-[#F2CC8F] font-semibold'
+                : 'text-gray-400 hover:text-neutral-950 hover:bg-[#F2CC8F] font-semibold'
               }`}
           >
             <IkonHome />
@@ -36,10 +35,9 @@ function Sidebar({ halaman, setHalaman, asalHalaman }) {
           {/* Menu pantry */}
           <button
             onClick={() => setHalaman('dashboard')}
-            className={`flex items-center gap-3 w-full py-2.5 px-3 rounded-xl transition-all cursor-pointer text-left text-[15px] ${
-              halaman === 'dashboard' || halaman === 'rekomendasi' || (halaman === 'detail-resep' && (asalHalaman === 'rekomendasi' || asalHalaman === 'dashboard'))
+            className={`flex items-center gap-3 w-full py-2.5 px-3 rounded-xl transition-all cursor-pointer text-left text-[15px] ${halaman === 'dashboard' || halaman === 'rekomendasi' || (halaman === 'detail-resep' && (asalHalaman === 'rekomendasi' || asalHalaman === 'dashboard'))
                 ? 'bg-[#F2CC8F] text-neutral-950 font-bold shadow-sm'
-                : 'text-gray-400 hover:text-[#F2CC8F] font-semibold'
+                : 'text-gray-400 hover:text-neutral-950 hover:bg-[#F2CC8F] font-semibold'
               }`}
           >
             <IkonPantry />
@@ -49,10 +47,9 @@ function Sidebar({ halaman, setHalaman, asalHalaman }) {
           {/* Menu koleksi */}
           <button
             onClick={() => setHalaman('koleksi')}
-            className={`flex items-center gap-3 w-full py-2.5 px-3 rounded-xl transition-all cursor-pointer text-left text-[15px] ${
-              halaman === 'koleksi' || (halaman === 'detail-resep' && asalHalaman === 'koleksi')
+            className={`flex items-center gap-3 w-full py-2.5 px-3 rounded-xl transition-all cursor-pointer text-left text-[15px] ${halaman === 'koleksi' || (halaman === 'detail-resep' && asalHalaman === 'koleksi')
                 ? 'bg-[#F2CC8F] text-neutral-950 font-bold shadow-sm'
-                : 'text-gray-400 hover:text-[#F2CC8F] font-semibold'
+                : 'text-gray-400 hover:text-neutral-950 hover:bg-[#F2CC8F] font-semibold'
               }`}
           >
             <IkonKoleksi />
@@ -69,7 +66,7 @@ function Sidebar({ halaman, setHalaman, asalHalaman }) {
         {/* Tombol keluar */}
         <button
           onClick={() => setHalaman('login')}
-          className="flex items-center gap-3 w-full py-2.5 px-3 text-red-450 hover:text-red-400 font-semibold text-sm transition-all cursor-pointer text-left"
+          className="flex items-center gap-3 w-full py-2.5 px-3 text-red-400 hover:text-red-500 hover:bg-white/5 rounded-xl font-semibold text-sm transition-all cursor-pointer text-left"
         >
           <IkonKeluar />
           <span>Keluar</span>

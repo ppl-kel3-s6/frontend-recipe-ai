@@ -1,6 +1,6 @@
 //  Import komponen
 import { useState, useRef, useEffect } from 'react'
-import { IkonKamera, IkonPengaturan, IkonHapus, IkonCentang, IkonTambah, IkonPencarian } from './components/Ikon'
+import { IkonKamera, IkonPengaturan, IkonHapus, IkonCentang, IkonTambah, IkonPencarian } from '../components/Ikon'
 
 // Fungsi upload foto
 function UploadFoto({ setHalaman, setDetailResep, setBahanAktif, tahap, setTahap }) {
@@ -127,12 +127,12 @@ function UploadFoto({ setHalaman, setDetailResep, setBahanAktif, tahap, setTahap
 
   // Rendering tampilan utama dashboard
   return (
-    <div className={`w-full min-h-full bg-[#F8F9FA] px-2 ${isCentered ? 'py-8' : 'pt-2 pb-8'} flex flex-col relative`}>
+    <div className={`w-full min-h-full bg-[#F8F9FA] px-6 md:px-12 ${isCentered ? 'py-8' : 'pt-2 pb-8'} flex flex-col relative`}>
       <div className={`w-full flex flex-col items-center ${isCentered ? 'justify-center py-4' : 'justify-start py-2'} flex-1`}>
 
         {/* Area Tampilan Unggah Foto */}
         {(tahap === 'unggah' || tahap === 'menganalisis') && (
-          <div className="flex flex-col items-center max-w-4xl w-full gap-6">
+          <div className="flex flex-col items-center max-w-6xl w-full gap-6">
             {/* Judul dan deskripsi */}
             <div className="text-center">
               <h2 className="text-3xl font-extrabold text-gray-900">Foto Bahan Makanan</h2>
@@ -213,7 +213,7 @@ function UploadFoto({ setHalaman, setDetailResep, setBahanAktif, tahap, setTahap
 
         {/* Area Tampilan Hasil Deteksi Bahan */}
         {tahap === 'hasil' && (
-          <div className="flex flex-col max-w-4xl mx-auto w-full gap-6 py-2">
+          <div className="flex flex-col max-w-6xl mx-auto w-full gap-6 py-2">
             {/* Container Bahan dan Preview */}
             <div className="flex flex-col md:flex-row gap-8 w-full">
 

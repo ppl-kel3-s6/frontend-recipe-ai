@@ -30,7 +30,7 @@ function Login({ setHalaman }) {
   // Tangani pengiriman form
   const tanganiSubmit = (e) => {
     e.preventDefault()
-    setHalaman('dashboard')
+    setHalaman('pilihan-awal')
   }
 
   return (

@@ -22,33 +22,33 @@ function Koleksi({ setHalaman, setDetailResep }) {
 
   return (
     // Container koleksi
-    <div className="w-full min-h-full bg-[#F8F9FA] px-6 py-8 flex flex-col relative">
-      <div className="max-w-4xl mx-auto w-full flex flex-col gap-6">
+    <div className={`w-full min-h-full bg-[#F8F9FA] px-6 md:px-12 py-8 flex flex-col relative ${koleksiList.length === 0 ? 'justify-center items-center' : ''}`}>
 
-        {/* Kondisi jika belum ada resep yang disimpan */}
-        {koleksiList.length === 0 ? (
-          <div className="w-full bg-white rounded-xl p-8 shadow-md border border-gray-100 flex flex-col items-center justify-center gap-4 text-center">
-            {/* Ikon hati */}
-            <div className="w-20 h-20 rounded-full bg-gray-50 flex items-center justify-center">
-              <IkonHati className="w-10 h-10 text-gray-400" />
-            </div>
-
-            {/* Judul dan deksripsi */}
-            <div className="max-w-xs">
-              <p className="font-extrabold text-gray-800 text-lg">Belum Ada Koleksi</p>
-              <p className="text-sm text-gray-500 mt-1">Kamu belum menyimpan resep masakan apapun saat ini.</p>
-            </div>
-
-            {/* Tombol cari resep */}
-            <button
-              onClick={() => setHalaman('dashboard')}
-              className="py-3 px-6 btn-primary text-sm rounded-xl mt-2"
-            >
-              Cari Resep Sekarang
-            </button>
+      {/* Kondisi jika belum ada resep yang disimpan */}
+      {koleksiList.length === 0 ? (
+        <div className="flex flex-col items-center justify-center gap-5 text-center py-12">
+          {/* Ikon hati */}
+          <div className="w-24 h-24 rounded-full bg-gray-200/50 flex items-center justify-center shadow-inner">
+            <IkonHati className="w-12 h-12 text-gray-400" />
           </div>
-        ) : (
-          /* Container daftar koleksi resep */
+
+          {/* Judul dan deksripsi */}
+          <div className="max-w-sm">
+            <p className="font-extrabold text-gray-900 text-xl tracking-tight">Belum Ada Koleksi</p>
+            <p className="text-sm text-gray-500 mt-2 font-medium">Kamu belum menyimpan resep masakan apapun saat ini.</p>
+          </div>
+
+          {/* Tombol cari resep */}
+          <button
+            onClick={() => setHalaman('dashboard')}
+            className="py-3.5 px-7 btn-primary text-sm rounded-xl mt-3 shadow-md hover:shadow-lg transition-all"
+          >
+            Cari Resep Sekarang
+          </button>
+        </div>
+      ) : (
+        <div className="max-w-6xl mx-auto w-full flex flex-col gap-6">
+          {/* Container daftar koleksi resep */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
             {koleksiList.map(resep => (
               <div
@@ -61,7 +61,7 @@ function Koleksi({ setHalaman, setDetailResep }) {
               >
                 <div>
                   {/* Container gambar dan hati */}
-                  <div className="w-full h-40 rounded-lg overflow-hidden relative mb-2 bg-gray-100">
+                  <div className="w-full h-45 rounded-lg overflow-hidden relative mb-2 bg-gray-100">
                     <img
                       src={resep.gambar}
                       alt={resep.nama}
@@ -111,8 +111,8 @@ function Koleksi({ setHalaman, setDetailResep }) {
               </div>
             ))}
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   )
 }

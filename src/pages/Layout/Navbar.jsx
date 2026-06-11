@@ -2,6 +2,8 @@
 function Navbar({ halaman, tahap }) {
   const dapatkanJudul = () => {
     switch (halaman) {
+      case 'dashboard-home':
+        return 'DASHBOARD'
       case 'dashboard':
         return tahap === 'hasil' ? 'LIST BAHAN TERDETEKSI' : 'UPLOAD FOTO'
       case 'rekomendasi':

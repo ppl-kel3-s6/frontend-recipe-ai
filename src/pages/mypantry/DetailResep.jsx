@@ -1,10 +1,10 @@
 // Import komponen
 import { useState, useEffect } from 'react'
-import GayaCetak from './components/GayaCetak'
-import { IkonKembali, IkonWaktu, IkonKesulitan, IkonSimpan } from './components/Ikon'
+import GayaCetak from '../components/GayaCetak'
+import { IkonKembali, IkonWaktu, IkonKesulitan, IkonSimpan } from '../components/Ikon'
 
 // Fungsi halaman detail resep
-function DetailResep({ setHalaman, detailResep }) {
+function DetailResep({ setHalaman, detailResep, asalHalaman }) {
   const [apakahDisimpan, setApakahDisimpan] = useState(false)
 
   // Membaca status favorit resep
@@ -44,17 +44,17 @@ function DetailResep({ setHalaman, detailResep }) {
   }
 
   return (
-    <div className="w-full min-h-full bg-[#F8F9FA] px-6 py-8 flex flex-col relative print:p-0 print:bg-white">
+    <div className="w-full min-h-full bg-[#F8F9FA] px-6 md:px-12 py-8 flex flex-col relative print:p-0 print:bg-white">
 
       {/* Gaya cetak */}
       <GayaCetak />
 
       {/* Container detail resep */}
-      <div className="max-w-4xl mx-auto w-full flex flex-col gap-6 print-area">
+      <div className="max-w-6xl mx-auto w-full flex flex-col gap-6 print-area">
         {/* Tombol kembali */}
         <div className="flex items-center justify-between no-print">
           <button
-            onClick={() => setHalaman('rekomendasi')}
+            onClick={() => setHalaman(asalHalaman || 'rekomendasi')}
             className="text-sm font-bold text-gray-700 hover:text-gray-900 transition-colors cursor-pointer flex items-center gap-1.5"
           >
             <IkonKembali className="w-4 h-4" />

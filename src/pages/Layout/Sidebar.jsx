@@ -1,7 +1,7 @@
-import { IkonPantry, IkonKoleksi, IkonKeluar } from '../components/Ikon'
+import { IkonPantry, IkonKoleksi, IkonKeluar, IkonHome } from '../components/Ikon'
 
 // Layout sidebar
-function Sidebar({ halaman, setHalaman }) {
+function Sidebar({ halaman, setHalaman, asalHalaman }) {
   return (
     <div className="w-52 bg-[#2C2C2C] border-r border-neutral-800 flex flex-col justify-between pb-6 px-4 flex-none">
       {/* Container menu */}
@@ -20,12 +20,26 @@ function Sidebar({ halaman, setHalaman }) {
 
         {/* Navigasi */}
         <nav className="flex flex-col gap-2 mt-2">
+          {/* Menu Dashboard */}
+          <button
+            onClick={() => setHalaman('dashboard-home')}
+            className={`flex items-center gap-3 w-full py-2.5 px-3 rounded-xl transition-all cursor-pointer text-left text-[15px] ${
+              halaman === 'dashboard-home' || (halaman === 'detail-resep' && asalHalaman === 'dashboard-home')
+                ? 'bg-[#F2CC8F] text-neutral-950 font-bold shadow-sm'
+                : 'text-gray-400 hover:text-neutral-950 hover:bg-[#F2CC8F] font-semibold'
+              }`}
+          >
+            <IkonHome />
+            <span>Dashboard</span>
+          </button>
+
           {/* Menu pantry */}
           <button
             onClick={() => setHalaman('dashboard')}
-            className={`flex items-center gap-3 w-full py-2.5 px-3 rounded-xl transition-all cursor-pointer text-left text-[15px] ${halaman === 'dashboard' || halaman === 'rekomendasi' || halaman === 'detail-resep'
-              ? 'bg-[#F2CC8F] text-neutral-950 font-bold shadow-sm'
-              : 'text-gray-400 hover:text-neutral-950 hover:bg-[#F2CC8F] font-semibold'
+            className={`flex items-center gap-3 w-full py-2.5 px-3 rounded-xl transition-all cursor-pointer text-left text-[15px] ${
+              halaman === 'dashboard' || halaman === 'rekomendasi' || (halaman === 'detail-resep' && (asalHalaman === 'rekomendasi' || asalHalaman === 'dashboard'))
+                ? 'bg-[#F2CC8F] text-neutral-950 font-bold shadow-sm'
+                : 'text-gray-400 hover:text-neutral-950 hover:bg-[#F2CC8F] font-semibold'
               }`}
           >
             <IkonPantry />
@@ -35,9 +49,10 @@ function Sidebar({ halaman, setHalaman }) {
           {/* Menu koleksi */}
           <button
             onClick={() => setHalaman('koleksi')}
-            className={`flex items-center gap-3 w-full py-2.5 px-3 rounded-xl transition-all cursor-pointer text-left text-[15px] ${halaman === 'koleksi'
-              ? 'bg-[#F2CC8F] text-neutral-950 font-bold shadow-sm'
-              : 'text-gray-400 hover:text-neutral-950 hover:bg-[#F2CC8F] font-semibold'
+            className={`flex items-center gap-3 w-full py-2.5 px-3 rounded-xl transition-all cursor-pointer text-left text-[15px] ${
+              halaman === 'koleksi' || (halaman === 'detail-resep' && asalHalaman === 'koleksi')
+                ? 'bg-[#F2CC8F] text-neutral-950 font-bold shadow-sm'
+                : 'text-gray-400 hover:text-neutral-950 hover:bg-[#F2CC8F] font-semibold'
               }`}
           >
             <IkonKoleksi />

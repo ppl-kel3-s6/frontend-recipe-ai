@@ -150,9 +150,9 @@ function Dashboard({ setHalaman, setDetailResep }) {
                   setFilterNegara([])
                   setFilterWilayah([])
                 }}
-                className="text-[11px] font-bold text-red-500 hover:text-red-700 cursor-pointer"
+                className="text-sm font-bold text-red-500 hover:text-red-700 cursor-pointer"
               >
-                Reset Semua
+                Reset
               </button>
             </div>
 
@@ -362,11 +362,11 @@ function Dashboard({ setHalaman, setDetailResep }) {
               </div>
             )}
 
+          </div>
+
         </div>
 
       </div>
-
-    </div>
     </div>
   )
 }
